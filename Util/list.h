@@ -6,6 +6,10 @@ struct node {
   struct node *next;
 };
 
+struct list {
+  struct node *head;
+};
+
 struct node *listFromArgs(int argc, char *argv[]) {
   if (argc <= 1)
     return NULL;

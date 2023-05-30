@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../../Util/list.h"
 
+
 int listSum(struct node *list);
 
 int main(int argc, char *argv[]) {
@@ -10,6 +11,15 @@ int main(int argc, char *argv[]) {
   printf("Sum: %d\n", listSum(list));
   listFree(list);
 }
+
+/**
+ * List representation:
+ * 
+ * struct node {
+ *  int value;
+ *  struct node *next;
+ * };
+ */
 
 // while version
 int listSum(struct node *list) {
