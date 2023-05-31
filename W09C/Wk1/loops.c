@@ -13,9 +13,33 @@ int main(int argc, char *argv[]) {
 }
 
 // while version
-void array_sum(int *arr, int n) { printf("TODO\n"); }
+// void array_sum(int *arr, int n) {
+//   int sum = 0;
+
+//   int i = 0;
+//   while (i < n) {
+//     sum += arr[i];
+//     i++; // i = i + 1;
+//   }
+
+//   printf("%d\n", sum);
+
+//   if (sum % 2 == 0) {
+//     printf("Even\n");
+//   } else {
+//     printf("Odd\n");
+//   }
+// }
 
 // for version
-// void array_sum(int *arr, int n) {
-//   printf("TODO\n");
-// }
+void array_sum(int *arr, int n) {
+  int sum = 0;
+
+  for (int i = 0; i < n; i++) {
+    sum += arr[i];
+  }
+
+  printf("%d\n", sum);
+
+  printf("%s\n", sum % 2 == 0 ? "Even" : "Odd");
+}
