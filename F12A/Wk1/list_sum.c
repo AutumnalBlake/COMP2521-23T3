@@ -21,17 +21,10 @@ int main(int argc, char *argv[]) {
  * };
  */
 
-// while version
 int listSum(struct node *list) {
   int sum = 0;
-  for (struct node *curr = list; curr != NULL; curr = curr->next) {
+  for (struct node *curr; curr != NULL; curr = curr->next) {
     sum += curr->value;
   }
   return sum;
 }
-
-// for version
-// int listSum(struct node *list) {
-//     // TODO
-//     return 42; 
-// }

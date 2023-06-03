@@ -11,8 +11,8 @@ loops: loops.c
 swap: swap.c
 	$(CC) $(CFLAGS) swap.c -o swap.exe
 
-list_sum: list_sum.c
-	$(CC) $(CFLAGS) list_sum.c -o list_sum.exe
+list_sum: list_sum.c ../../Util/list.c
+	$(CC) $(CFLAGS) list_sum.c ../../Util/list.c -o list_sum.exe
 
 list_delete: list_delete.c
 	$(CC) $(CFLAGS) list_delete.c -o list_delete.exe
