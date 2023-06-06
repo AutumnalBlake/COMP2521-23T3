@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include "../../Util/list.h"
 
+/**
+ * List representation:
+ * 
+ * struct node {
+ *  int value;
+ *  struct node *next;
+ * };
+ */
 
 int listSum(struct node *list);
 
@@ -12,14 +20,6 @@ int main(int argc, char *argv[]) {
   listFree(list);
 }
 
-/**
- * List representation:
- * 
- * struct node {
- *  int value;
- *  struct node *next;
- * };
- */
 
 int listSum(struct node *list) {
   int sum = 0;
@@ -28,3 +28,4 @@ int listSum(struct node *list) {
   }
   return sum;
 }
+

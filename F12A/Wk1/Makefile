@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -g -fsanitize=address,leak,undefined
+CFLAGS = -Wall -Werror -g -fsanitize=address,leak,undefined
 
 
 .PHONY: all
@@ -14,8 +14,8 @@ swap: swap.c
 list_sum: list_sum.c ../../Util/list.c
 	$(CC) $(CFLAGS) list_sum.c ../../Util/list.c -o list_sum.exe
 
-list_delete: list_delete.c
-	$(CC) $(CFLAGS) list_delete.c -o list_delete.exe
+list_delete: list_delete.c ../../Util/list.c
+	$(CC) $(CFLAGS) list_delete.c ../../Util/list.c -o list_delete.exe
 
 stack_size: stack_size.c
 	gcc -O0 stack_size.c -o stack_size.exe
