@@ -26,3 +26,6 @@ list_is_sorted: list_is_sorted.c
 fibonacci: fibonacci.c
 	$(CC) $(CFLAGS) fibonacci.c ../../Util/list.c -o fibonacci
 
+.PHONY: clean
+clean:
+	rm factorial list_length list_sum list_count_odd list_delete list_is_sorted fibonacci
