@@ -1,0 +1,9 @@
+function polynomial(array A of n + 1 coefficients, int x)
+    int result = 0
+    int x_pow = 1
+
+    for i from 0 to n:
+        result = result + x_pow * A[i]
+        x_pow = x_pow * x
+
+    return result

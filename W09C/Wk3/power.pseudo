@@ -1,0 +1,13 @@
+O(log y)
+
+function pow(x, y) -> x^y
+    if y = 0:
+        return 1
+
+    let half_pow = pow(x, y/2)
+
+    if y is even:
+        return half_pow * half_pow
+
+    if y is odd:
+        return half_pow * half_pow * x
