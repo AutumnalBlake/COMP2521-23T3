@@ -1,0 +1,12 @@
+function TwoSum:
+    Input: Array A of length n, integer k
+    Output: Whether two distinct numbers in A add to k
+
+    for i from 0 to n-1:
+        for j from i+1 to n-1:
+            if A[i] + A[j] = k:
+                return true
+
+    return false
+
+// O(n^2)
