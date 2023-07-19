@@ -1,0 +1,25 @@
+function DijkstraSSSP(G, src): 
+    dist <- [∞ for each vertex]
+    pred <- [-1 for each vertex]
+    vSet <- all vertices of G
+
+    dist[src] = 0
+
+    while vSet still has vertices:
+        // Take the 'closest' vertex not yet finalised
+        v <- vertex ∈ vSet with min dist[v]
+        remove v from vSet
+        
+        for each vertex w adjacent to v: 
+            // Relax v-w
+            if dist[v] + weight(v, w) < dist[w]:
+                dist[w] <- dist[v] + weight(v, w)
+                pred[w] <- v
+
+
+    return dist
+
+// We can implement the 'vSet' efficiently with
+// a PRIORITY QUEUE (min heap)
+
+// What if we want to reconstruct the path after?
