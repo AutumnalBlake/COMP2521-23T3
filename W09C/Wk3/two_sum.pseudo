@@ -1,9 +1,0 @@
-function two_sum(array A with length n, int k):
-    returns whether two numbers in A add to k
-
-    for i from 0 to n-1:
-        for j from i + 1 to n-1:
-            if A[i] + A[j] = k:
-                return True
-    
-    return False
