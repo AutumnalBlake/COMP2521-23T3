@@ -47,5 +47,20 @@ int main(int argc, char *argv[]) {
  */
 
 void listDelete(struct list *list, int val) {
-    // TODO
+  if (list->head == NULL) return;
+
+  if (list->head->value == val) {
+    struct node *to_remove = list->head;
+    list->head = list->head->next;
+    free(to_remove);
+    return;
+  }
+
+    for (struct node *curr = list->head; curr->next != NULL; curr = curr->next) {
+      if (curr->next->value == val) {
+        struct node *to_remove = curr->next;
+        curr->next = curr->next->next;
+        free(to_remove);
+      }
+    }
 }

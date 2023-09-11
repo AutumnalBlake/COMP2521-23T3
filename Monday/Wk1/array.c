@@ -9,7 +9,8 @@ int main(int argc, char *argv[]) {
 	int size = atoi(argv[1]);
 
     // TODO: store arr on heap
-    int arr[size];
+	int *arr = malloc(size * sizeof (int));
+    // int arr[size];
         
 	for (int i = 0; i < size; i++) {
 		arr[i] = 42;

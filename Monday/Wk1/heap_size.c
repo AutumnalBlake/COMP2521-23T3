@@ -1,19 +1,21 @@
-#include <assert.h>
-#include <stdint.h>
-#include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <limits.h>
+#include <stdint.h>
 
-#define MAX_OBJ 0x7FFFFFFFFFFFFFFFUL
+#define KB 1024UL
+#define MB 1048576UL
+#define GB 1073741824UL
 
 int main() {
-  for (uint64_t sz = 1; sz < UINT64_MAX / 2; sz *= 2) {
-    printf("%ld bytes\n", sz);
+  for (uint64_t sz = 1;; sz *= 2) {
     char *arr = malloc(sz);
-    if (!arr) {
-      perror("");
-      return 0;
-    }
+
+    if (arr == NULL) exit(1);
+    free(arr);
+
+    if (sz >= GB) printf("%ld GB\n", sz / GB);
+    else if (sz >= MB) printf("%ld MB\n", sz / MB);
+    else if (sz >= KB) printf("%ld KB\n", sz / KB);
+    else printf("%ld B\n", sz);
   }
 }

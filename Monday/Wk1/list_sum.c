@@ -22,13 +22,25 @@ int main(int argc, char *argv[]) {
  */
 
 // while version
-int listSum(struct node *list) {
-    // TODO
-    return 42; 
-}
+// int listSum(struct node *list) {
+//     int sum = 0;
+//     struct node *curr = list;
+
+//     while (curr != NULL) {
+//       sum += curr->value;
+//       curr = curr->next;
+//     }
+
+//     return sum; 
+// }
 
 // for version
-// int listSum(struct node *list) {
-//     // TODO
-//     return 42; 
-// }
+int listSum(struct node *list) {
+    int sum = 0;
+
+    for (struct node *curr = list; curr != NULL; curr = curr->next) {
+      sum += curr->value;
+    }
+    
+    return sum;
+}
