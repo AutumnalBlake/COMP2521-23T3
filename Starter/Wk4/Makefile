@@ -3,7 +3,7 @@ CFLAGS = -Wall -g -fsanitize=address,leak,undefined
 
 
 .PHONY: all
-all: BSTreeNumNodes BSTreeHeight BSTreeReverse BSTreeNodeLevel BSTreeCountGreater BSTreeRotateRight
+all: BSTreeNumNodes BSTreeHeight BSTreeReverse BSTreeNodeLevel BSTreeCountGreater BSTreeRotateRight AdtUser
 
 BSTreeNumNodes: BSTreeNumNodes.c
 	$(CC) $(CFLAGS) BSTreeNumNodes.c BSTree.c -o BSTreeNumNodes
@@ -23,6 +23,9 @@ BSTreeCountGreater: BSTreeCountGreater.c
 BSTreeRotateRight: BSTreeRotateRight.c
 	$(CC) $(CFLAGS) BSTreeRotateRight.c BSTree.c -o BSTreeRotateRight
 
+AdtUser: AdtUser.c Set.c
+	$(CC) $(CFLAGS) AdtUser.c Set.c -o AdtUser
+
 .PHONY: clean
 clean:
-	rm BSTreeNumNodes BSTreeHeight BSTreeReverse BSTreeNodeLevel BSTreeCountGreater BSTreeRotateRight
+	rm BSTreeNumNodes BSTreeHeight BSTreeReverse BSTreeNodeLevel BSTreeCountGreater BSTreeRotateRight AdtUser
