@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include "BSTree.h"
 
+int max(int a, int b) {return a > b ? a : b;}
+
 int BSTreeHeight(BSTree t) {
-  return 0;
+    return -1;
 }
 
 int main(int argc, char *argv[]) {

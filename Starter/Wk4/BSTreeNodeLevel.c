@@ -3,7 +3,7 @@
 #include "BSTree.h"
 
 int BSTreeNodeLevel(BSTree t, int key) {
-  return 0;
+    return -1;
 }
 
 int main(int argc, char *argv[]) {

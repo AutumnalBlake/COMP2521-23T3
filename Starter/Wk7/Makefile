@@ -3,12 +3,12 @@ CFLAGS = -Wall -g -fsanitize=address,leak,undefined
 
 
 .PHONY: all
-all: bfs
+all: cycle
 
-bfs: bfs.c
-	$(CC) $(CFLAGS) bfs.c Graph.c Queue.c -o bfs
+cycle: cycle.c
+	$(CC) $(CFLAGS) cycle.c Graph.c -o cycle
 
 
 .PHONY: clean
 clean:
-	rm bfs
+	rm cycle

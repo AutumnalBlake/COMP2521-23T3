@@ -3,7 +3,7 @@
 #include "BSTree.h"
 
 int BSTreeCountGreater(BSTree t, int key) {
-  return 0;
+    return -1;
 }
 
 int main(int argc, char *argv[]) {

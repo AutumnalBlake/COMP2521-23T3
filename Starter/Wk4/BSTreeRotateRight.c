@@ -3,10 +3,7 @@
 #include "BSTree.h"
 
 BSTree BSTreeRotateRight(BSTree t) {
-  BSTree new_root = t->left;
-  t->left = t->left->right;
-  new_root->right = t;
-  return new_root;
+    return t;
 }
 
 int main(int argc, char *argv[]) {
