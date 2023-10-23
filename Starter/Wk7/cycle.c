@@ -2,8 +2,10 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+
+
 bool has_cycle(Graph g) {
-    return false;
+   return false;
 }
 
 int main() {
