@@ -1,9 +1,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 bool is_palindrome(char *str) {
-    return false;
+  int n = strlen(str);
+  int i = 0;
+  int j = n - 1;
+
+  while (i < j) {
+    if (str[i] != str[j]) return false;
+    i++;
+    j--;
+  }
+
+  return true;
 }
 
 int main(int argc, char *argv[]) {
