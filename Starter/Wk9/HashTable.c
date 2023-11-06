@@ -45,6 +45,10 @@ void HTFree(HT ht) {
     free(ht);
 }
 
+int hash(int x, int buckets) {
+    return ((x >= 0 ? x : -x) + buckets) % buckets;
+}
+
 void HTInsert(HT ht, int key, int value) {
     if (ht->n_items >= ht->n_buckets) {
         // Resize
@@ -55,7 +59,8 @@ void HTInsert(HT ht, int key, int value) {
 
         for (int i = 0; i < ht->n_buckets; i++) {
             for (struct node *n = ht->buckets[i]; n != NULL; n = n->next) {
-                new_buckets[n->k % new_size] = list_insert(new_buckets[n->k % new_size], n->k, n->v);
+                int h = hash(n->k, new_size);
+                new_buckets[h] = list_insert(new_buckets[h], n->k, n->v);
             }
             list_free(ht->buckets[i]);
         }
@@ -65,21 +70,21 @@ void HTInsert(HT ht, int key, int value) {
         ht->buckets = new_buckets;
     }
 
-    int hash = key % ht->n_buckets;
-    ht->buckets[hash] = list_insert(ht->buckets[hash], key, value);
+    int h = hash(key, ht->n_buckets);
+    ht->buckets[h] = list_insert(ht->buckets[h], key, value);
 }
 
 bool HTContains(HT ht, int key) {
-    int hash = key % ht->n_buckets;
-    for (struct node *n = ht->buckets[hash]; n != NULL; n = n->next) {
+    int h = hash(key, ht->n_buckets);
+    for (struct node *n = ht->buckets[h]; n != NULL; n = n->next) {
         if (n->k == key) return true;
     }
     return false;
 }
 
 int HTGet(HT ht, int key) {
-        int hash = key % ht->n_buckets;
-    for (struct node *n = ht->buckets[hash]; n != NULL; n = n->next) {
+    int h = hash(key, ht->n_buckets);
+    for (struct node *n = ht->buckets[h]; n != NULL; n = n->next) {
         if (n->k == key) return n->v;
     }
     assert(false);
